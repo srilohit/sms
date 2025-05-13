@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login/Register Tabs</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/login.css" rel="stylesheet" />
+        <script src="js/bootstrap.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="min-vh-100 d-flex align-items-center justify-content-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-10 col-md-8 col-lg-6 bg-custom p-4 rounded shadow-custom">
+                        <!-- Tabs nav -->
+                        <ul class="nav nav-pills nav-justified mb-4" id="pills-tab" role="tablist">
+                            <li class="nav-item me-2" role="presentation">
+                                <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login"
+                                    aria-selected="true">Login</button>
+                            </li>
+                            <li class="nav-item ms-2" role="presentation">
+                                <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                                    aria-selected="false">Register</button>
+                            </li>
+                        </ul>
+
+                        <!-- Tabs content -->
+                        <div class="tab-content" id="pills-tabContent">
+                            <!-- Login Tab -->
+                            <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+                                <form>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="loginEmail" type="email" placeholder="name@example.com" />
+                                        <label for="loginEmail">Email address</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="loginPassword" type="password" placeholder="Password" />
+                                        <label for="loginPassword">Password</label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" id="loginRemember" type="checkbox" />
+                                        <label class="form-check-label" for="loginRemember">Remember Password</label>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <a class="small" href="password.html">Forgot Password?</a>
+                                        <button type="submit" class="btn btn-primary px-5 btn-animated">
+                                            <a href="index.html" class="text-decoration-none text-white">Login</a>
+                                        </button>
+                                    </div>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a href="#" class="small text-decoration-none">Need an account please Register!</a>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Register Tab -->
+                            <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
+                                <form>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="registerFirstName" type="text" placeholder="Enter your first name" />
+                                                <label for="registerFirstName">First name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input class="form-control" id="registerLastName" type="text" placeholder="Enter your last name" />
+                                                <label for="registerLastName">Last name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="registerEmail" type="email" placeholder="name@example.com" />
+                                        <label for="registerEmail">Email address</label>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="registerPassword" type="password" placeholder="Create a password" />
+                                                <label for="registerPassword">Password</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="registerConfirmPassword" type="password" placeholder="Confirm password" />
+                                                <label for="registerConfirmPassword">Confirm Password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid mb-3">
+                                        <button type="submit" class="btn btn-primary btn-block btn-animated">Create Account</button>
+                                    </div>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a href="#" class="small text-decoration-none">Already have an account please Login!</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- End of content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="layoutAuthentication_footer">
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2025</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+
+</html>
+
