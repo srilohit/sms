@@ -24,3 +24,25 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+
+//Registration form data
+
+let registerForm = {
+    firstname: '',
+    lastname: '',
+    email: '',
+    phoneNumber: '',
+    password: '',
+    confirmPassword: ''
+};
+
+const registerData = ()=>{
+    registerForm.firstname = document.getElementById('registerFirstName').value;
+    registerForm.lastname = document.getElementById('registerLastName').value;
+    registerForm.email = document.getElementById('registerEmail').value;
+    registerForm.phoneNumber = document.getElementById('registerContactNumber').value;
+    registerForm.password = document.getElementById('registerPassword').value;
+    registerForm.confirmPassword = document.getElementById('registerConfirmPassword').value;
+
+    console.log(registerForm);
+};

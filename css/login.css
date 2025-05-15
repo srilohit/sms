@@ -1,79 +1,20 @@
- /* animation for tab content transitions */
- .tab-pane {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Button animation */
-.btn-animated {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.btn-animated:hover {
-    transform: scale(1.1); 
-    background-color: #0056b3;
-}
-
-.btn-animated:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-}
-
-/* Input focus animation */
-.form-control:focus {
-    border-color: #0056b3;
-    box-shadow: 0 0 5px #021e3b;
-}
-
-/* Tab hover effect */
-.nav-pills .nav-link {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    margin-right: 20px; /* Add a larger gap between the tabs */
-}
-
-.nav-pills .nav-link:hover {
-    transform: scale(1.1); 
-    background-color: #0056b3 !important; 
-    color: white !important; 
-}
-
-.nav-pills .nav-link:last-child {
-    margin-right: 0;
-}
-
-body,
-html {
-    height: 100%;
-}
-
-.min-vh-100 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+body {
     background-color: #021e3b;
 }
 
-.container {
-    max-width: 100%;
-}
-
-.bg-custom {
+.form_login {
     background-color: #e2ebef;
-    width: 400px;
 }
 
-.shadow-custom {
-    box-shadow: 0 3px 4px 6px rgba(11, 11, 11, 0.1);
+.form_register {
+    background-color: #e2ebef;
+}
+
+.card {
+    background-color: #e2ebef;
+}
+
+.form-control:focus {
+    border-color: #529eeb;
+    box-shadow: 0 0 0 0.25rem #b2d8e8;
 }
