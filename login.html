@@ -25,7 +25,7 @@
                         </div>
     
                         <!-- Login Form -->
-                        <form action="" method="post">
+                        <form onsubmit="event.preventDefault()">
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="loginEmail" type="email" placeholder="name@example.com" />
                                 <label for="loginEmail">Email address</label>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <a class="small" href="password.html">Forgot Password?</a>
-                                <button type="submit" class="btn btn-primary px-4">Login</button>
+                                <button type="submit" class="btn btn-primary px-4" onclick="loginData()">Login</button>
                             </div>
     
                             <hr>
