@@ -31,22 +31,22 @@ const registerData = ()=>{
     const firstname = document.getElementById('registerFirstName').value;
     const lastname = document.getElementById('registerLastName').value;
     const email = document.getElementById('registerEmail').value;
-    const phoneNumber = document.getElementById('registerContactNumber').value;
+    // const phoneNumber = document.getElementById('registerContactNumber').value;
     const password = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('registerConfirmPassword').value;
 
     
     let registerForm = {
-        firstname: firstname,
-        lastname: lastname,
+        first_name: firstname,
+        last_name: lastname,
         email: email,
-        phoneNumber: phoneNumber,
+        // phoneNumber: phoneNumber,
         password: password,
-        confirmPassword: confirmPassword
+        confirm_Password: confirmPassword
     };
     console.log(registerForm);
     
-    fetch('http://Localhost:1010/Register_Admin', {
+    fetch('http://Localhost:1010/register_Admine', {
         method : 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ const loginData = ()=>{
 
     console.log(loginForm);
 
-    fetch('http://Localhost:1010/Login', {
+    fetch(`http://Localhost:1010/admin_Login/${email}/${password}`, {
         method : 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -82,11 +82,26 @@ const loginData = ()=>{
         body : JSON.stringify(loginForm)
         })
     .then(res => res.json())
-    .then(data => console.log('Login success', data))
+    .then(data => {
+        alert(data);
+    })
     .catch(err => {
         console.error('Error:', err);
         alert('Login failed');
     });
+
+    fetch('http://localhost:1010/get_All_admins', { method : 'get' })
+    .then( data => {
+        if(data.email === email && data.password === password){
+            window.location.href = 'index.html';
+        }
+        else{
+            alert('Login failed');
+        };
+    })
+    .catch(err => 
+        console.log('Data not sent', err)
+    );
 };
 
 
