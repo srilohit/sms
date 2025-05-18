@@ -134,26 +134,36 @@
                                         <form onsubmit="event.preventDefault()">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="userFirstName" type="text" placeholder="Enter your first name" />
-                                                <label for="userFirstName">First Name</label>
+                                                <label for="userFirstName">First Name <span class="text-danger">*</span></label>
                                             </div>
                     
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="userLastName" type="text" placeholder="Enter your last name" />
-                                                <label for="userLastName">Last Name</label>
+                                                <label for="userLastName">Last Name <span class="text-danger">*</span></label>
+                                            </div>
+
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="userRollNumber" type="text" placeholder="Enter your roll number" required/>
+                                                <label for="userRollNumber">Roll Number <span class="text-danger"><i>(only students)</i></span></label>
                                             </div>
                     
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="userEmail" type="email" placeholder="name@example.com" />
-                                                <label for="userEmail">Email Address</label>
+                                                <label for="userEmail">Email Address <span class="text-danger">*</span></label>
                                             </div>
                     
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="userContactNumber" type="number" placeholder="Contact Number" />
-                                                <label for="userContactNumber">Contact Number</label>
+                                                <input class="form-control" id="userContactNumber" type="number" placeholder="Enter yourContact Number" />
+                                                <label for="userContactNumber">Contact Number <span class="text-danger">*</span></label>
+                                            </div>
+
+                                            <div class="form-floating mb-3">
+                                                <textarea class="form-control" id="userAddress" placeholder="Enter your address" ></textarea>
+                                                <label for="userAddress">Full Address <span class="text-danger">*</span></label>
                                             </div>
                 
                                             <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-                                                <option selected>User Type</option>
+                                                <option selected disabled>User Type <span class="text-danger">*</span></option>
                                                 <option value="teacher">Teacher</option>
                                                 <option value="student">Student</option>
                                                 <option value="parent">Parent</option>
@@ -163,13 +173,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="userPassword" type="password" placeholder="Create a password" />
-                                                        <label for="userPassword">Password</label>
+                                                        <label for="userPassword">Password <span class="text-danger">*</span></label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="userConfirmPassword" type="password" placeholder="Confirm password" />
-                                                        <label for="userConfirmPassword">Confirm Password</label>
+                                                        <label for="userConfirmPassword">Confirm Password <span class="text-danger">*</span></label>
                                                     </div>
                                                 </div>
                                             </div>
