@@ -33,7 +33,7 @@ const registerData = ()=>{
         email: email,
         // phoneNumber: phoneNumber,
         password: password,
-        confirm_Password: confirmPassword
+        confirm_password: confirmPassword
     };
     console.log(registerForm);
     
