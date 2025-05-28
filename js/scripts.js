@@ -124,9 +124,9 @@ const studentData = ()=>{
 
     
     let studentForm = {
-        first_name: firstname,
-        last_name: lastname,
-        dob: dob,
+        firstName: firstname,
+        lastName: lastname,
+        dateOfBirth: dob,
         gender: gender,
         fatherName: fatherName,
         motherName: motherName,
@@ -139,10 +139,10 @@ const studentData = ()=>{
         nationality: nationality,
         religion: religion,
         email: email,
-        phoneNumber: phoneNumber,
+        mobileNumber: phoneNumber,
         address: address,
         password: password,
-        confirm_Password: confirmPassword
+        confirmPassword: confirmPassword
     };
     console.log(studentForm);
     
