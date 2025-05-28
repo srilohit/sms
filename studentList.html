@@ -9,6 +9,8 @@
         <title>Dashboard - SB Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="js/bootstrap.js"></script>
+        <script src="js/scripts.js"></script>
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -47,6 +49,48 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseStudent" aria-expanded="false" aria-controls="collapseStudent">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
+                                Student
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseStudent" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="addStudent.html">Add Student</a>
+                                    <a class="nav-link" href="studentList.html">All Students</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTeacher" aria-expanded="false" aria-controls="collapseTeacher">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                                Teacher
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseTeacher" aria-labelledby="headingFour" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="addTeacher.html">Add Teacher</a>
+                                    <a class="nav-link" href="teacherList.html">All Teachers</a>
+                                </nav>
+                            </div><a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseParent" aria-expanded="false" aria-controls="collapseParent">
+                                 <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
+                                Parent
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseParent" aria-labelledby="headingFive" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="addParent.html">Add Parent</a>
+                                    <a class="nav-link" href="parentList.html">All Parents</a>
+                                </nav>
+                            </div><a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEmployee" aria-expanded="false" aria-controls="collapseEmployee">
+                                <div class="sb-nav-link-icon"><i class="fas fa-briefcase"></i></div>
+                                Employee
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseEmployee" aria-labelledby="headingSix" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="addAmployee.html">Add Employee</a>
+                                    <a class="nav-link" href="employeeList.html">All Employees</a>
+                                </nav>
+                            </div>
                             <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -77,16 +121,7 @@
                                             <a class="nav-link" href="password.html">Forgot Password</a>
                                         </nav>
                                     </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseUser" aria-expanded="false" aria-controls="pagesCollapseUser">
-                                        User
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseUser" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="addUser.html">Add User</a>
-                                            <a class="nav-link" href="userList.html">All Users</a>
-                                        </nav>
-                                    </div>
+                                   
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                                         Error
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -120,79 +155,14 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Add User</h1>
+                        <h1 class="mt-4">User List</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Adding new user</li>
+                            <li class="breadcrumb-item active">Displaying all user list</li>
                         </ol>
                         
                         <!-- Here we add new user format -->
 
-                        <div class="mb-5">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8 col-lg-6 shadow-lg">
-                                        <form onsubmit="event.preventDefault()">
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="userFirstName" type="text" placeholder="Enter your first name" />
-                                                <label for="userFirstName">First Name <span class="text-danger">*</span></label>
-                                            </div>
-                    
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="userLastName" type="text" placeholder="Enter your last name" />
-                                                <label for="userLastName">Last Name <span class="text-danger">*</span></label>
-                                            </div>
-
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="userRollNumber" type="text" placeholder="Enter your roll number" required/>
-                                                <label for="userRollNumber">Roll Number <span class="text-danger"><i>(only students)</i></span></label>
-                                            </div>
-                    
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="userEmail" type="email" placeholder="name@example.com" />
-                                                <label for="userEmail">Email Address <span class="text-danger">*</span></label>
-                                            </div>
-                    
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="userContactNumber" type="number" placeholder="Enter yourContact Number" />
-                                                <label for="userContactNumber">Contact Number <span class="text-danger">*</span></label>
-                                            </div>
-
-                                            <div class="form-floating mb-3">
-                                                <textarea class="form-control" id="userAddress" placeholder="Enter your address" ></textarea>
-                                                <label for="userAddress">Full Address <span class="text-danger">*</span></label>
-                                            </div>
-                
-                                            <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-                                                <option selected disabled>User Type <span class="text-danger">*</span></option>
-                                                <option value="teacher">Teacher</option>
-                                                <option value="student">Student</option>
-                                                <option value="parent">Parent</option>
-                                            </select>
-                    
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="userPassword" type="password" placeholder="Create a password" />
-                                                        <label for="userPassword">Password <span class="text-danger">*</span></label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="userConfirmPassword" type="password" placeholder="Confirm password" />
-                                                        <label for="userConfirmPassword">Confirm Password <span class="text-danger">*</span></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    
-                                            <!-- Register Button -->
-                                            <div class="d-grid mb-3">
-                                                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
 
                     </div>
                 </main>

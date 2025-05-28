@@ -1,12 +1,3 @@
-/*!
-    * Start Bootstrap - SB Admin v7.0.7 (https://startbootstrap.com/template/sb-admin)
-    * Copyright 2013-2023 Start Bootstrap
-    * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin/blob/master/LICENSE)
-    */
-    // 
-// Scripts
-// 
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
@@ -83,7 +74,7 @@ const loginData = ()=>{
         })
     .then(res => res.json())
     .then(data => {
-        alert(data);
+        console.log('login about', data);        
     })
     .catch(err => {
         console.error('Error:', err);
@@ -91,17 +82,86 @@ const loginData = ()=>{
     });
 
     fetch('http://localhost:1010/get_All_admins', { method : 'get' })
+    .then( res => res.json())
     .then( data => {
-        if(data.email === email && data.password === password){
-            window.location.href = 'index.html';
-        }
-        else{
-            alert('Login failed');
-        };
+        data.filter( admin =>{
+            if(admin.email === email && admin.password === password){
+                alert('Login successful');
+                window.location.href = 'index.html';
+            }
+            else{
+                window.location.href = 'login.html';
+            }
+        });
     })
     .catch(err => 
         console.log('Data not sent', err)
     );
+};
+
+// Student Form data
+
+const studentData = ()=>{
+    const firstname = document.getElementById('userFirstName').value;
+    const lastname = document.getElementById('userLastName').value;
+    const dob = document.getElementById('userDob').value;
+    const gender = document.getElementById('userGender').value;
+    const fatherName = document.getElementById('userFatherName').value;
+    const motherName = document.getElementById('userMotherName').value;
+    const studentPhoto = document.getElementById('userImage').value;
+    const studentClass = document.getElementById('userClass').value;
+    const section = document.getElementById('userSection').value;
+    const rollNumber = document.getElementById('userRollNumber').value;
+    const admissionNumber = document.getElementById('userAdmitNumber').value;
+    const joiningDate = document.getElementById('userJoiningDate').value;
+    const nationality = document.getElementById('userNationality').value;
+    const religion = document.getElementById('userReligion').value;
+    const email = document.getElementById('userEmail').value;
+    const phoneNumber = document.getElementById('userContactNumber').value;
+    const address = document.getElementById('userAddress').value;
+    const password = document.getElementById('userPassword').value;
+    const confirmPassword = document.getElementById('userConfirmPassword').value;
+
+    
+    let studentForm = {
+        first_name: firstname,
+        last_name: lastname,
+        dob: dob,
+        gender: gender,
+        fatherName: fatherName,
+        motherName: motherName,
+        studentPhoto: studentPhoto,
+        studentClass: studentClass,
+        section: section,
+        rollNumber: rollNumber,
+        admissionNumber: admissionNumber,
+        joiningDate: joiningDate,
+        nationality: nationality,
+        religion: religion,
+        email: email,
+        phoneNumber: phoneNumber,
+        address: address,
+        password: password,
+        confirm_Password: confirmPassword
+    };
+    console.log(studentForm);
+    
+    fetch('http://Localhost:1010/add_Users', {
+        method : 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body : JSON.stringify(studentForm)
+        })
+    .then(res => res.json())
+    .then(data => {
+        console.log('Student data added:', data);
+        alert('student data added', data);
+    })
+    .catch(err => {
+        console.error('Error:', err);
+        alert('Registration failed');
+    });
 };
 
 
