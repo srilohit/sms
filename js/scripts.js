@@ -146,7 +146,7 @@ const studentData = ()=>{
     };
     console.log(studentForm);
     
-    fetch('http://Localhost:1010/add_Users', {
+    fetch('http://Localhost:1010/add_Student', {
         method : 'POST',
         headers: {
             'Content-Type': 'application/json'
