@@ -65,7 +65,7 @@ const loginData = ()=>{
 
     console.log(loginForm);
 
-    fetch(`http://Localhost:1010/admin_Login/${email}/${password}`, {
+    fetch(`http://localhost:1010/admin_Login/${email}/${password}`, {
         method : 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -108,7 +108,7 @@ const studentData = ()=>{
     const gender = document.getElementById('userGender').value;
     const fatherName = document.getElementById('userFatherName').value;
     const motherName = document.getElementById('userMotherName').value;
-    const studentPhoto = document.getElementById('userImage').value;
+    const studentPhoto = document.getElementById('userImage').files[0];
     const studentClass = document.getElementById('userClass').value;
     const section = document.getElementById('userSection').value;
     const rollNumber = document.getElementById('userRollNumber').value;
@@ -130,7 +130,7 @@ const studentData = ()=>{
         gender: gender,
         fatherName: fatherName,
         motherName: motherName,
-        studentPhoto: studentPhoto,
+        studentPhoto: studentPhoto?.name || "",
         studentClass: studentClass,
         section: section,
         rollNumber: rollNumber,
@@ -145,8 +145,13 @@ const studentData = ()=>{
         confirmPassword: confirmPassword
     };
     console.log(studentForm);
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
     
-    fetch('http://Localhost:1010/add_Student', {
+    fetch('http://localhost:1010/add_Student', {
         method : 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -156,7 +161,7 @@ const studentData = ()=>{
     .then(res => res.json())
     .then(data => {
         console.log('Student data added:', data);
-        alert('student data added', data);
+        alert('student data added: '+ JSON.stringify(data));
     })
     .catch(err => {
         console.error('Error:', err);
